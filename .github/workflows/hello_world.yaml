@@ -23,3 +23,11 @@ jobs:
       - name: goodbye world
         run: echo "Goodbye world"
         shell: bash
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Super-linter
+        uses: super-linter/super-linter@v5.7.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
